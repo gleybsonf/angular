@@ -1,0 +1,7 @@
+<app-header></app-header>
+ 
+@for (task of taskList; track task.id;  let idx = $index) {
+    <app-task-item [task]="task" (onDeleteTaskEmit)="onDeleteTask($event)" (onToggleTaskEmit)="onToggleTask($event)"></app-task-item>
+} @empty {
+    <li aria-hidden="true"> Não há itens. </li>
+}

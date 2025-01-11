@@ -19,7 +19,7 @@
           "options": {
              
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles"]
+              "includePaths": ["src/assets/scss"]
             },
             "outputPath": "dist/current-angular-version",
             "index": "src/index.html",

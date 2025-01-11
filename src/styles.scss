@@ -1,8 +1,11 @@
+@use '_variables' as *;
+@use '_colors' as *;
+
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 // Importa variáveis e mixins
-//@import 'styles/_colors';
+
 
 * {
   box-sizing: border-box;
@@ -19,7 +22,8 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  //border: 1px solid steelblue;
+  border: 1px solid $red-color-test;
   padding: 30px;
   border-radius: 5px;
 }

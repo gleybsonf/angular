@@ -1,5 +1,6 @@
 @use '_variables' as *;
 @use '_colors' as *;
+ 
 
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
@@ -14,10 +15,14 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;  
 }
 
-.container {
+/*
+Tranferir as classes para seus devidos componentes.
+*/
+
+/* .container {
   max-width: 900px;
   margin: 30px auto;
   overflow: auto;
@@ -27,7 +32,9 @@ body {
   padding: 30px;
   border-radius: 5px;
 }
+ */
 
+/* 
 .btn {
   display: inline-block;
   background: #000;
@@ -88,4 +95,4 @@ body {
 .form-control-check input {
   flex: 2;
   height: 20px;
-}
+} */

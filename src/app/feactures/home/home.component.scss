@@ -1,0 +1,48 @@
+:host {
+    display: grid;
+    grid-template-areas: 
+      "header header"
+      "nav main"
+      "footer footer";
+    grid-template-columns: 1fr 4fr; /* 1 parte para o nav, 3 partes para o main */
+    grid-template-rows: auto 1fr auto; /* Header e footer automáticos, main ocupa o espaço restante */
+    //height: 100vh; /* Ocupa a altura total da tela */
+    border-color: black;
+
+    margin: 50px;
+
+    background-color: yellow;
+
+    app-header{
+        grid-area: header;
+        border: 1px solid rgb(0, 0, 0);
+    }
+  }
+  
+  nav {
+    grid-area: nav;
+    border: 1px solid black;
+  }
+  
+  main {
+    grid-area: main;
+    border: 1px solid black;
+  }
+  
+  footer {
+    grid-area: footer;
+    border: 1px solid black;
+  }
+
+@media  (max-width: 1024px){
+    :host{
+        background-color: blue;
+    }           
+}
+
+@media  (max-width: 960px){
+    :host{
+        background-color: green;
+    }           
+}
+  

@@ -1,0 +1,27 @@
+<div class="sidebar" [class.closed]="isClosed">
+    <button class="toggle-btn" (click)="toggleSidebar()">
+        <i class="fa-solid fa-caret-left" [class.rotated]="isRotated"></i>
+    </button>
+  
+    <ul class="menu">
+
+        @for (item of menuItems; track $index; let idx = $index) {
+            <li (click)="menuSelected(item)">
+                @if (!isClosed) {  
+                    <i class="{{ item?.icon }}"></i>              
+                    <span class="menu-text">{{ item?.name }}</span>
+                }@else {
+                    <i class="{{ item?.icon }}"></i>                    
+                }                
+            </li>                    
+        } @empty {
+            <span>Sem opções.</span>
+        }      
+    </ul>
+  </div>
+  
+  <!-- Conteúdo principal -->
+  <!-- <div class="main-content" [class.expanded]="isClosed">
+    <h1>Conteúdo Principal</h1>
+  </div> -->
+  

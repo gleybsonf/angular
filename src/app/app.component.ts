@@ -12,3 +12,4 @@ import { HomeComponent } from './feactures/home/home.component';
 export class AppComponent {
   title = 'currentAngularVersion';
 }
+

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { sidebarOptions } from './sidebar-options';
+import { Component, EventEmitter, output, Output } from '@angular/core';
+import { SidebarOptions } from './sidebar-options';
 import { CommonModule } from '@angular/common';
+ 
 
 @Component({
   selector: 'app-sidebar',
@@ -13,7 +14,10 @@ export class SidebarComponent {
   protected isClosed: boolean = false;
   protected isRotated: boolean = false
 
-  protected menuItems: sidebarOptions[] 
+  protected menuItems: SidebarOptions[] 
+  
+  //@Output() itemMenuOutputEmitter = new EventEmitter<sidebarOptions>()
+  protected itemMenuSelected = output<SidebarOptions>();
 
   constructor(){
     this.menuItems =  [ 
@@ -25,8 +29,9 @@ export class SidebarComponent {
     ];
   }
 
-  protected menuSelected(itemSelected:sidebarOptions ):void{
-    console.log("menuSelected", itemSelected)
+  protected menuSelected(itemSelected: SidebarOptions ):void{
+    console.log("menuSelected", itemSelected);
+    this.itemMenuSelected.emit(itemSelected)
   }
 
   protected toggleSidebar():void {

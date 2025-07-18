@@ -3,6 +3,7 @@ import { HeaderComponent } from '@components/components/header/header.component'
 import { SidebarComponent } from '@components/components/sidebar/sidebar.component';
 import { TaskManagementService } from '../feactures/task-management/services/task-management.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { SidebarOptions } from '@components/components/sidebar/sidebar-options';
 
 
 @Component({
@@ -16,6 +17,13 @@ export class HomeComponent implements OnInit {
   constructor(private taskManagementService: TaskManagementService){
 
   }
+
+
+  protected itemMenuSelected(itemMenu: SidebarOptions):void{
+    
+  }
+
+
   ngOnInit(): void {
     this.taskManagementService.getAllPeople().subscribe({ next: (value)=>{
       console.log("next", value)

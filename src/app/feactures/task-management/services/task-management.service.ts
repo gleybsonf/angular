@@ -9,7 +9,8 @@ import { ITask } from '../interfaces/task.interface';
 })
 export class TaskManagementService {
 
-  urlApi: string = environment.taskConfigurationApiUrl
+  private urlApi: string = environment.taskConfigurationApiUrl
+  private urlApiPeople: string = environment.peopleRegisterApiUrl
 
   constructor( private httpClient: HttpClient) { }
 
@@ -25,5 +26,11 @@ export class TaskManagementService {
   public completedTask(task: ITask):Observable<ITask>{
     return this.httpClient.delete<ITask>( `${this.urlApi}/tasks/${task}`);
   }  
+
+
+  //transferir para outro service
+  public getAllPeople():Observable<HttpResponse<any>>{
+    return this.httpClient.get<any>( `${this.urlApiPeople}/people/findAll`, { observe: 'response'});
+  }
 
 }

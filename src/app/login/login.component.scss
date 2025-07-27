@@ -1,0 +1,31 @@
+:host {
+  //host significa todo o elemento angular.
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000000;
+  //min-width: 400px; //mudar para em ou rem e criar os tamanhos padrões no css global
+  //min-height: 400px; //mudar para em ou rem e criar os tamanhos padrões no css global
+  width: 100vw;
+  height: 100vh;
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000000;
+    min-width: 400px; //mudar para em ou rem e criar os tamanhos padrões no css global
+    min-height: 400px; //mudar para em ou rem e criar os tamanhos padrões no css global
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    h2 {
+      color: aqua; //teste para depois adicionar paleta de cores.
+    }
+
+    &__form-group{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+}

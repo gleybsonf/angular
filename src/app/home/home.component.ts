@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
       console.log("next", value)
     }, 
     error: (error: HttpErrorResponse)=>{
-      console.log("error", error)
+      //console.log("error", error)
     }
   })
   }

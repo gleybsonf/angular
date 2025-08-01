@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from "./feactures/login/login.component";
 import { GLOBAL_CONSTANTS } from "./core/constants/global.constants";
 
 export const routes: Routes = [

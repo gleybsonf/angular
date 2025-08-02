@@ -1,5 +1,5 @@
-import { IAddress } from "../interfaces/address";
 import { UserRole } from "../user-enum";
+import { Address } from "./address";
 
 export class User {
   constructor(
@@ -10,7 +10,7 @@ export class User {
     public isActive: boolean,
     public createdAt: string,
     public updatedAt: string,
-    public address?: IAddress
+    public address?: Address
   ) {}
 
   // Exemplo de método de domínio
@@ -19,16 +19,16 @@ export class User {
   }
 
   get fullAddress(): string {
-    if (!this.address) return '';
+    if (!this.address) return "";
     const { street, number, city, state } = this.address;
     return `${street}, ${number} - ${city}/${state}`;
   }
 
-  activate(): void {
+  public activate(): void {
     this.isActive = true;
   }
 
-  deactivate(): void {
+  public deactivate(): void {
     this.isActive = false;
   }
 }

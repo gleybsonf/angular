@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthStateService } from './state/auth-state.service';
+import { AuthFacadeService } from './facade/auth-facade.service';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +11,11 @@ import { Component } from '@angular/core';
 export class LoginComponent {
 
 
-  constructor(){
+  constructor(private authFacadeService: AuthFacadeService){
   }
 
   protected onLogin():void{
+    this.authFacadeService.login();
 
   }
 }

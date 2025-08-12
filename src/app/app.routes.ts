@@ -1,7 +1,6 @@
-import { Routes } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { LoginComponent } from "./feactures/login/login.component";
+import { Routes } from "@angular/router"; 
 import { GLOBAL_CONSTANTS } from "./core/constants/global.constants";
+import { LoginComponent } from "./feactures/login/pages/login/login.component";
 
 export const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: "full" }, // Redireciona a raiz para o login

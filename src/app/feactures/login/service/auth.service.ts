@@ -18,5 +18,6 @@ export class AuthService {
   public onLogin(email: string, password: string): Observable<IUser| null>{
     return of(null/* userMock */).pipe(delay(5000))
     //this.http.post<IUser>(`${this.baseUrl}/login`, { email, password });
+    //retornar com status e o body do usuário
   }
 }

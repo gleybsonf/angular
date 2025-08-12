@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TaskManagementListComponent } from "./feactures/task-management/pages/task-management-list/task-management-list.component";
-import { HomeComponent } from './home/home.component';
+ 
  
 
 @Component({

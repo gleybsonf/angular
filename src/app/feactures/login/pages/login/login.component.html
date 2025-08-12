@@ -1,0 +1,16 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form  >
+        
+        <div class="login-container__form-group">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" [disabled]="loading()"  required> 
+        </div>
+        <div class="login-container__form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" [disabled]="loading()">             
+        </div>
+        <button type="button" [disabled]="loading()" (click)="onLogin()">Entrar</button>
+        {{ loading()  ? 'Carregando...' : '' }}
+    </form>
+</div>

@@ -11,6 +11,8 @@
             <input type="password" id="password" name="password" [disabled]="loading()">             
         </div>
         <button type="button" [disabled]="loading()" (click)="onLogin()">Entrar</button>
+        <p>Ou</p>
+        <button type="button" [disabled]="true" (click)="onLoginGoogle()">Login Google</button>
         {{ loading()  ? 'Carregando...' : '' }}
     </form>
 </div>

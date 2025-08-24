@@ -40,6 +40,10 @@ export class LoginComponent implements OnInit {
     this.authFacadeService.login(userLogin.user, userLogin.password);
   }
 
+  protected onLoginGoogle(): void {
+    //this.authFacadeService.loginWithGoogle();
+  }
+
   private onLogout(): void {
     this.authFacadeService.logout();
   }

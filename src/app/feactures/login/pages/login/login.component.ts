@@ -8,6 +8,7 @@ import { toSignal } from "@angular/core/rxjs-interop";
   imports: [],
   templateUrl: "./login.component.html",
   styleUrl: "./login.component.scss",
+  standalone: true,
 })
 export class LoginComponent implements OnInit {
   protected loading!: Signal<boolean>;

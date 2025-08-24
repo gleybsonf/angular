@@ -8,40 +8,27 @@ import { IUser } from "../../registration-people/interfaces/user";
   providedIn: "root",
 })
 export class AuthStateService {
-  private readonly _user = new BehaviorSubject<IUser | null>(null);
-  private readonly _loading = new BehaviorSubject<boolean>(false);
-  private readonly _error = new BehaviorSubject<string | null>(null);
+  
+  private loadingSubject = new BehaviorSubject<boolean>(false);
+  private userSubject = new BehaviorSubject<IUser | null>(null);
+  private errorSubject = new BehaviorSubject<string | null>(null);
 
-  readonly user$ = this._user.asObservable();
-  readonly loading$ = this._loading.asObservable();
-  readonly error$ = this._error.asObservable();
+  public readonly loading$ = this.loadingSubject.asObservable();
+  public readonly user$ = this.userSubject.asObservable();
+  public readonly error$ = this.errorSubject.asObservable();
 
   constructor(private authService: AuthService) {}
 
-  public login(user: string, password: string): void {
-    this._loading.next(true);
-    this.authService
-      .onLogin(user, password)
-      .pipe(
-        tap((user) => {
-          this._user.next(user);
-          this._loading.next(false);
-          this._error.next(null);
-        }),
-        finalize(() => {
-          this._loading.next(false);
-        })
-      )
-      .subscribe({
-        error: (error) => {
-          this._error.next(error.message);
-          this._loading.next(false);
-        },
-      });
+  public setLoading(value: boolean) {
+    this.loadingSubject.next(value);
   }
 
-  protected logout(): void {
-    this._user.next(null);
-    this._error.next(null);
+  public setUser(user: IUser | null) {
+    this.userSubject.next(user);
   }
+
+  public setError(error: string | null) {
+    this.errorSubject.next(error);
+  }
+
 }

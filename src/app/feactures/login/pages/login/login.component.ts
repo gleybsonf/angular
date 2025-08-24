@@ -2,6 +2,7 @@ import { Component, OnInit, Signal, signal } from "@angular/core";
 import { AuthFacadeService } from "../../facade/auth-facade.service";
  
 import { toSignal } from "@angular/core/rxjs-interop";
+import { Subject } from "rxjs";
 
 @Component({
   selector: "app-login",
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   protected loading!: Signal<boolean>;
   protected error!: Signal<string | null>;
 
+   
   constructor(private authFacadeService: AuthFacadeService) {
     this.handleLoginError();
     this.handleLoading();
@@ -37,7 +39,7 @@ export class LoginComponent implements OnInit {
       password: "testPassword",
     };
 
-    this.authFacadeService.login(userLogin.user, userLogin.password);
+    this.authFacadeService.login(userLogin.user, userLogin.password) ;
   }
 
   protected onLoginGoogle(): void {

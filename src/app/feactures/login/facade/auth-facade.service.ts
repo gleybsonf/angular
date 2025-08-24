@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AuthService } from "../service/auth.service";
 import { AuthStateService } from "../state/auth-state.service";
-import { BehaviorSubject, catchError, finalize, Observable, tap, throwError } from "rxjs";
+import { catchError, finalize, Observable, tap, throwError } from "rxjs";
 import { IUser } from "../../registration-people/interfaces/user";
 import { Router } from "@angular/router";
 
@@ -24,9 +24,9 @@ export class AuthFacadeService {
     this.error$ = this._authStateService.error$;
   }
 
-  public login(username: string, password: string) {
+  public login(username: string, password: string): Observable<IUser | null> {
     this._authStateService.setLoading(true);
-    this.authService
+    return this.authService
       .onLogin(username, password)
       .pipe(
         tap((res) => {

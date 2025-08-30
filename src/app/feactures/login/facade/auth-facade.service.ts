@@ -42,7 +42,7 @@ export class AuthFacadeService {
           this._authStateService.setLoading(false);
         })
       )
-      .subscribe();
+       
   }
 
   logout() {

@@ -1,3 +1,4 @@
 export const GLOBAL_CONSTANTS = {
-    LOGIN : "Login"
-}
+  LOGIN: "Login",
+  HOME: "Home",
+};

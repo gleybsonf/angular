@@ -13,6 +13,6 @@
         <button type="button" [disabled]="loading()" (click)="onLogin()">Entrar</button>
         <p>Ou</p>
         <button type="button" [disabled]="true" (click)="onLoginGoogle()">Login Google</button>
-        {{ loading()  ? 'Carregando...' : '' }}
+        <p>{{ loading()  ? 'Carregando...' : '' }}</p>
     </form>
 </div>

@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       password: "testPassword",
     };
 
-    this.authFacadeService.login(userLogin.user, userLogin.password) ;
+    this.authFacadeService.login(userLogin.user, userLogin.password).subscribe() ;
   }
 
   protected onLoginGoogle(): void {

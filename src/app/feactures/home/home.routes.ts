@@ -3,7 +3,7 @@ import { HomeComponent } from './home.component'; // Supondo que você tenha um 
 
 export const HOME_ROUTES: Routes = [
   {
-    path: '', // A rota vazia serve para o componente ser o padrão de "/home"
+    path: 'home', 
     component: HomeComponent
   }
 ];

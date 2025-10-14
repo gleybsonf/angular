@@ -6,7 +6,7 @@ import { catchError, throwError } from 'rxjs';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
-  console.log("Passou no interceptor", req);
+   
   const router = inject(Router);
   const token = localStorage.getItem("token");
 

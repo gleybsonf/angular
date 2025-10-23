@@ -16,7 +16,7 @@ import { TaskManagementService } from '../task-management/services/task-manageme
 export class HomeComponent implements OnInit {
 
   constructor(private taskManagementService: TaskManagementService){
-    console.log
+    console.log("HomeComponent loaded")
   }
 
 
